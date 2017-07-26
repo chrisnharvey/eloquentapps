@@ -7,16 +7,52 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Vuetify from 'vuetify';
+import App from './components/App.vue';
+import AppPage from './components/pages/App.vue';
+import Home from './components/pages/Home.vue';
+import Navigation from './components/pages/Navigation.vue';
+import Toolbar from './components/partials/Toolbar.vue';
+import Downloads from './components/partials/Downloads.vue';
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.component('navigation', Navigation);
+Vue.component('toolbar', Toolbar);
+Vue.component('downloads', Downloads);
+ 
+Vue.use(VueRouter);
+Vue.use(Vuetify);
 
-Vue.component('example', require('./components/Example.vue'));
+var router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            component: Home
+        },
+        {
+            path: '/app',
+            component: AppPage,
+        },
+        {
+            path: '/clients',
+            component: Clients
+        },
+        {
+            path: '/authorized',
+            component: AuthorizedClients
+        },
+        {
+            path: '/pat',
+            component: PersonalAccessTokens
+        },
+    ]
+});
 
 const app = new Vue({
-    el: '#app'
+    router,
+    el: '#app',
+    template: '<App />',
+    components: { App }
 });
