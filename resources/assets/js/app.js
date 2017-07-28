@@ -13,7 +13,7 @@ import Vuetify from 'vuetify';
 import App from './components/App.vue';
 import AppPage from './components/pages/App.vue';
 import Home from './components/pages/Home.vue';
-import Navigation from './components/pages/Navigation.vue';
+import Navigation from './components/partials/Navigation.vue';
 import Toolbar from './components/partials/Toolbar.vue';
 import Downloads from './components/partials/Downloads.vue';
 
