@@ -34,19 +34,7 @@ var router = new VueRouter({
         {
             path: '/app',
             component: AppPage,
-        },
-        {
-            path: '/clients',
-            component: Clients
-        },
-        {
-            path: '/authorized',
-            component: AuthorizedClients
-        },
-        {
-            path: '/pat',
-            component: PersonalAccessTokens
-        },
+        }
     ]
 });
 
