@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('{uri}', function () {
+    return view('app');
+})->where('uri', '([A-z\d-\/_.]+)?');;
+
